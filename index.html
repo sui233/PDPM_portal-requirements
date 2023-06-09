@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" /><link rel="canonical" href="https://portal.pdpm.ncpsb.org.cn/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>PDPM Portal Requirements</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Main";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/";
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> PDPM Portal Requirements
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Main</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pages">Pages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">整体思路</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">操作逻辑</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="Projects/">Projects</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="Annotations/">Annotations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="Proteins/">Proteins</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="Submission/">Login And Data Submit</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">PDPM Portal Requirements</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Main</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="the-requirement-document-of-pdpm-portal">The Requirement Document of PDPM portal</h1>
+<p>PDPM portal is a proteomics data centered, a priori knowledge driven, biology and clinical researcher oriented data portal, which enables integrated analysis of multi-omics data and towards an development ecosystem.</p>
+<p>This is the Requirement document for the first version of PDPM portal, which contains two diemensions of omics data, proteomics and phosphoproteomincs, with a build-in data analyzing toolkit, "PDPM toolkit", to enable users make biology insights from clinical and multi-omics data.</p>
+<h2 id="pages">Pages</h2>
+<ul>
+<li><code>Projects</code> - The page for users to choose projects(or Datasets) and display basic statistics to represents clinical data.</li>
+<li><code>Annotations</code> - The page for users to view relationships between clinical and molecular data, which is based on the data annotation.</li>
+<li><code>Proteins</code> - The page that presents the expression data in serveral way.</li>
+<li><code>Login and Data Submission</code> - The pages that allows data providers and database administrator uploading and managing data.</li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>整体设计部分，这部分已经涉及到一些技术的实现方案，因此不使用英语表述。以下涉及到技术与实现的部分，也不使用英语表述。</p>
+<h3 id="_1">整体思路</h3>
+<p>自从生物学发现了自己的微观基础，生物学家对于某种宏观现象的解释就必须建立在某种微观机制的基础上，尤其在分子生物学诞生以来，各类生物分子进一步拥有了更为准确的名称，从而形成了另一套成体系的“语言”，与先前描述宏观生物学现象的那种语言相独立。因此，“阐明某个生物学现象的分子机理”，不妨认为是一个翻译的过程，或者用符号学术语，“指号过程”，即在不同的“语言”下指认同一个事物，从而在两种语言之间建立联系。
+当前的各类生物学教材，已经提供了对于“宏观生命现象”的语言的较为完备的知识体系，而以UniprotKB为代表的各类生物信息学数据库与知识库也已经构建了分子层面的“微观生命现象”的语言系统。当前迫切需要一种能够使得两种体系进行对话的方法。这种“对话”是以归纳的逻辑为基础的，在技术层面上，一般以统计学的方法实现。
+因此，PDPM portal的基本逻辑如下图所示：</p>
+<body>
+<div style="text-align:center">
+<img src="img/logic_structure.png" width="60%">
+</div>
+</body>
+
+<p>临床的因素与分子的因素在注释数据当中交汇。使用统计学在数据注释结果当中寻找某种结构，这种结构就蕴含着某种“归纳的”生物学知识，即“某种生物学现象背后的分子机理”。PDPM portal当前的任务就在于利用预先整理并注释的数据，引导用户恰当的使用统计学工具，从这些数据当中挖掘这些结构。因此应当对于PDPM portal的操作逻辑进行设计，便于用户从“宏观现象”与“分子机理”两个层面切入，以最为高效、最接近没有编程基础的生物学家操作习惯的方式设计网站的操作逻辑。</p>
+<h3 id="_2">操作逻辑</h3>
+<p>PDPM portal将主要以cBioPortal作为参照系，相应的，其操作逻辑也将是“Dataset-Centric”；我们同时需要考虑到从蛋白质入手进行分析的需求。......</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="Projects/" class="btn btn-neutral float-right" title="Projects">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="Projects/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.4.2
+Build Date UTC : 2023-06-09 15:31:51.897887+00:00
+-->
