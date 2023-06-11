@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sui233.github.io/PDPM_portal-requirements/customSel/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Custom Selection - PDPM Portal Requirements</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Custom Selection";
+        var mkdocs_page_input_path = "customSel.md";
+        var mkdocs_page_url = "/PDPM_portal-requirements/customSel/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PDPM Portal Requirements
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Main</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../structure/">Structure</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../opLog/">Opreation Logic</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../HomePage/">Home Page</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Custom Selection</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#-patient">患者 - Patient</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#-protein">蛋白质 - Protein</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#proteoform">Proteoform</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">其他功能</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analyze/">Analysis</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Submission/">Login And Data Submit</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../entities/">Entity Information</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PDPM Portal Requirements</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Custom Selection</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">用户自定义数据选取</h1>
+<p>应当保证用户能够按照自己的喜好任意的选取数据，以拓展数据选取与数据分析的可能性。具体而言，这个页面的主要内容几乎是完全参考GDC与ICGC Data portal做成的，因此并不需要为此付出太多精力。页面布局如下图所示：</p>
+<body>
+<div style="text-align:center">
+<img src="img/old_ver.png" width="75%">
+</div>
+</body>
+
+<p><em>这个图是先前某个设计文档当中的，当时只考虑的实体与现在不同，现在来看其中应当考虑的实体应当是前述“Patient”、“Protein”与“Proteoform”三种</em></p>
+<p>在这种设计布局下，每个页面当中有“数据过滤（Filter）”、“图形总结（Graphic Summary）”与“表格（Tables）”三类。每种实体的过滤指标、图形总结、表格的表头如下：</p>
+<h2 id="-patient">患者 - Patient</h2>
+<ul>
+<li><strong>数据过滤（Filter）</strong>：病灶（Primary Site）、所属研究项目（Project）、性别（Gender）、确诊年龄（Age at Diagnosis）、肿瘤分期（Tumor Stage）、生存状态（Vital Status）、疾病状态（Disease Status）</li>
+<li><strong>图形总结（Graphic Summary）</strong>：病灶对应的疾病种类及其研究项目【饼图，两圈】，性别、国别、肿瘤分期、生存状态、疾病状态【以上五者皆为饼图】，确诊年龄【柱状图】</li>
+<li><strong>表格（Tables）的表头</strong>：ID、所属研究项目、病灶、疾病种类、年龄、性别、数据种类【与Project部分相同】、生存时间、生存状态等等。<em>这个表头需要用一个更加通用的表头替代</em></li>
+</ul>
+<h2 id="-protein">蛋白质 - Protein</h2>
+<ul>
+<li><strong>数据过滤（Filter）</strong>：器官特异性、器官特异性等级、有无PDB注释、途径【搜索框】、GO【搜索框】、靶向药物【搜索框】、对应基因所在位置【搜索框】、变异造成的影响【High or Low】</li>
+<li><strong>图形总结（Graphic Summary）</strong>：蛋白质突变频次【柱状图】、蛋白质突变对于生存的影响【KM图，针对同一个蛋白质的全部突变】</li>
+<li><strong>表格（Tables）的表头</strong>：Uniprot ID、HUGO Symbol，Name、Ensembl ID、RefSeq ID、PDB编号、Researches、Patients affected、Dependency、PTM种类数</li>
+</ul>
+<h2 id="proteoform">Proteoform</h2>
+<p><em>这部分暂时不进行讨论，留待后续开发过程讨论</em></p>
+<h2 id="_2">其他功能</h2>
+<p>除以上主要部分以外，这个部分应当有一些其他的功能。例如将选取的实体保存到集合当中、速览已经选取的实体作为一个集合所表现出来的性质等等。<em>以上两个功能必须添加，前者参考GDC、ICGC Data portal；至于后者，患者集合使用患者集合的概览方法进行概览，蛋白质使用蛋白质集合的概览方法进行概览</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../HomePage/" class="btn btn-neutral float-left" title="Home Page"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../analyze/" class="btn btn-neutral float-right" title="Analysis">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../HomePage/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../analyze/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

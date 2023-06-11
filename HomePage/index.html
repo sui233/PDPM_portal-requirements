@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sui233.github.io/PDPM_portal-requirements/about/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sui233.github.io/PDPM_portal-requirements/HomePage/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>About - PDPM Portal Requirements</title>
+    <title>Home Page - PDPM Portal Requirements</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "About";
-        var mkdocs_page_input_path = "about.md";
-        var mkdocs_page_url = "/PDPM_portal-requirements/about/";
+        var mkdocs_page_name = "Home Page";
+        var mkdocs_page_input_path = "HomePage.md";
+        var mkdocs_page_url = "/PDPM_portal-requirements/HomePage/";
       </script>
     
     <script src="../js/jquery-3.6.0.min.js" defer></script>
@@ -52,8 +52,16 @@
                 <li class="toctree-l1"><a class="reference internal" href="../opLog/">Opreation Logic</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../HomePage/">Home Page</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Home Page</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">数据库内容总览</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">搜索入口</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">数据集浏览与选取</a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -72,10 +80,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../entities/">Entity Information</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">About</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
                 </li>
               </ul>
       </div>
@@ -92,7 +98,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>About</li>
+      <li>Home Page</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -101,14 +107,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="about-pdpm-portal">About PDPM portal</h1>
-<p>我尽了我最大的努力来完善这个需求文档。我自认为我现在已经比较好的整合了先前的所有内容（不过数据注释设计文档还是塞不进来），并且有了空前清晰的框架。但这个文档当前的详细程度似乎不是很高，我没有100%的把握说工程师能照着我的这个文档把PDPM portal整体都给写出来，因此我的这个文档可能还需要进一步的细化。</p>
-<p>2023年6月11日，by：贾铮</p>
+                <h1 id="_1">首页设计</h1>
+<p>首页是用户在访问网站、进行数据分析的过程当中所见到的第一个页面。这个页面对于用户的使用体验会有相当关键的影响。参考cBioPortal，PDPM portal的首页内容将主要包含“数据库内容总览”、“搜索入口”与“数据集浏览与选取”等主要组件，同时可以考虑添加“公告板”、友情链接等其他各类组件。首页的大体布局如下图所示：</p>
+<body>
+<div style="text-align:center">
+<img src="img/homepage_main.png" width="75%">
+</div>
+</body>
+
+<p>这里对于三种主要组件分别进行较为详细的说明。</p>
+<h2 id="_2">数据库内容总览</h2>
+<p>这个部分参考GDC Data portal设计，对应图中的“Database Overview”部分。这个部分包括“浏览导航”与“数据库版本总结概览”两个部分。前者包含肿瘤的分类树，点击该分类树可以展开或收起之，点击某个节点时可以同时点选与该节点相关的所有节点；后者展示当前版本的数据库当中各类型的数据总体上有哪些，不需要交互功能，只需要展示功能，大体上需要展示：研究项目数量、疾病种类数、收录患者数、蛋白质种类数、Proteoform总数以及相应研究文章的数目。</p>
+<p>这部分可以参考其他版本的设计文档当中的内容：</p>
+<body>
+<div style="text-align:center">
+<img src="img/other_ver.png" width="64%">
+</div>
+</body>
+
+<p>前者与后者分别对应图中位于右上角、左下角的方框。</p>
+<h2 id="_3">搜索入口</h2>
+<p>主要用于搜索蛋白质，在未选取数据集时只能进行全局搜索，在选取数据集后可以在选区范围内进行检索。蛋白质的检索结果在“Custom Selection”的界面当中展示，即勾选用户搜索的蛋白质，并将其相应条目置顶。</p>
+<p>这个搜索框也可以用于搜索其他与数据集本身相关的内容，例如病灶或疾病名称等，其搜索结果以如下方式体现：左边的癌症分类树的相关节点高亮，下方的数据集列表当中相应的条目被勾选。</p>
+<h2 id="_4">数据集浏览与选取</h2>
+<p>该部分为类似cBioPortal主页部分的数据集列表的一个列表，每个条目对应一个研究项目，每个条目的左边有复选框，右边有“查看相应文献”、“内容速览（Express Overview）”等选项。用户可以选择一个或多个研究项目进行速览，或选择两个及以上的项目进行对比分析，这两种分析都可以在数据分析页面当中找到。</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../entities/" class="btn btn-neutral float-left" title="Entity Information"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../opLog/" class="btn btn-neutral float-left" title="Opreation Logic"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../customSel/" class="btn btn-neutral float-right" title="Custom Selection">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -131,8 +159,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../entities/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../opLog/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../customSel/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

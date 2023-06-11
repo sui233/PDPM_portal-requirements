@@ -1,33 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://portal.pdpm.ncpsb.org.cn/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <loc>https://sui233.github.io/PDPM_portal-requirements/</loc>
+         <lastmod>2023-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://portal.pdpm.ncpsb.org.cn/Annotations/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <loc>https://sui233.github.io/PDPM_portal-requirements/HomePage/</loc>
+         <lastmod>2023-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://portal.pdpm.ncpsb.org.cn/Projects/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <loc>https://sui233.github.io/PDPM_portal-requirements/Submission/</loc>
+         <lastmod>2023-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://portal.pdpm.ncpsb.org.cn/Proteins/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <loc>https://sui233.github.io/PDPM_portal-requirements/about/</loc>
+         <lastmod>2023-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://portal.pdpm.ncpsb.org.cn/Submission/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <loc>https://sui233.github.io/PDPM_portal-requirements/analyze/</loc>
+         <lastmod>2023-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://portal.pdpm.ncpsb.org.cn/about/</loc>
-         <lastmod>2023-06-09</lastmod>
+         <loc>https://sui233.github.io/PDPM_portal-requirements/customSel/</loc>
+         <lastmod>2023-06-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sui233.github.io/PDPM_portal-requirements/entities/</loc>
+         <lastmod>2023-06-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sui233.github.io/PDPM_portal-requirements/opLog/</loc>
+         <lastmod>2023-06-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sui233.github.io/PDPM_portal-requirements/structure/</loc>
+         <lastmod>2023-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

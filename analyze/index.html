@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sui233.github.io/PDPM_portal-requirements/analyze/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Analysis - PDPM Portal Requirements</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Analysis";
+        var mkdocs_page_input_path = "analyze.md";
+        var mkdocs_page_url = "/PDPM_portal-requirements/analyze/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PDPM Portal Requirements
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Main</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../structure/">Structure</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../opLog/">Opreation Logic</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../HomePage/">Home Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../customSel/">Custom Selection</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Analysis</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">患者与临床数据</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#express-overview">Express Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comparative-view">Comparative View</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">蛋白质与分子数据</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Submission/">Login And Data Submit</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../entities/">Entity Information</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PDPM Portal Requirements</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Analysis</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">数据分析页面</h1>
+<p>PDPM portal最为重要的功能为其数据分析功能，本部分又称为PDPM toolkit。根据前述基本逻辑，数据分析页面当中的数据分析功能应当被分为三大类：对于患者及其临床数据的分析，对于蛋白质分子的先验知识与表达谱的分析，以及对于将以上两者联系起来的数据注释结果的分析。但考虑到数据注释是预先进行了的分析，因此数据注释的相关结果在其他两个层面当中进行展示更为方便。总体上，数据分析功能模块大体上如下图所示：</p>
+<body>
+<div style="text-align:center">
+<img src="img/overview.png" width="75%">
+</div>
+</body>
+
+<p>参考先前讨论的操作逻辑，数据分析的流程往往是从dataset，或者一组患者的数据开始，最终在分子层面，即蛋白质层面使用户能够挖掘得到一定的结构，再再分子层面进行延伸，因此以下将根据这个顺序展开叙述。</p>
+<h2 id="_2">患者与临床数据</h2>
+<p>对于一组或多组患者，有两种分析的出发点。第一种“Express Overview”是将其中的所有患者放到一起，展示其各方面的性质；另一种“Comparative View”是将所考虑的患者分为多组，并将这几个患者集合的各种性质进行比较。但在进行两两比较值钱，首先应该弄清楚每一组的性质，因此要从前者，即“Express Overview”入手，再从这个视图当中转向“Comparative View”。<em>以上为这个部分的操作逻辑，但如果已经找到了自己需要的数据，并保存到了集合当中，则不必考虑这些——但是对于一般的用户而言，根据以上操作逻辑进行操作是最为便捷的。</em></p>
+<h3 id="express-overview">Express Overview</h3>
+<p>“Express”的含义为“快捷”，这个分析功能代表对于一个患者集合的性质的快捷查看，这个页面要展示的除了患者信息的统计结果以外，还可以展示相关数据注释结果。</p>
+<p>这个页面主要由三部分组成：</p>
+<ul>
+<li><strong>类别数据统计与展示</strong>：患者表的标准表头或注释数据（如患者在哪项研究当中属于哪个亚型）当中数据应当“分为不同类别”的属性。这种数据使用饼图展示。用户可以在一个侧面的“控制台”当中选择自己需要展示什么、不需要展示什么（参考GDC Data portal）。饼图应当<em>可以自由拖动、转换为表格，且可以通过饼图进入“Comparative View”，根据该分类标准对于不同类别的患者进行比较，并查看分类结果。此外，这些分类标准应当能够被传递到接下来的分析当中</em>；</li>
+<li><strong>连续数据统计与展示</strong>：患者的标准表头当中数据为连续数据（不设置卡值则无法分类）的属性。这种数据使用柱状图（或散点图）进行表示。用户可以在柱状图的设置界面当中选择不同的卡值，以根据这些患者分为不同的类别。饼图的<em>斜体字</em>部分的要求同样适用于这里的柱状图。此外，患者集合当中所有患者的KM曲线也要在这部分展示；</li>
+<li><strong>注释数据展示</strong>：这里的“注释数据”一般指在相应患者在<strong>一项研究当中</strong>各个蛋白质/proteoform自身的表达变化或对于生存的影响，前者一般有FC、平均logFC等，后者一般有各类LogRankP、Hazard Ratio等。此外，“某个蛋白质在某项研究当中是某个亚型的Signature”、“某个蛋白质在某项研究的共表达分析过程当中被归入哪个模块”<em>（根据现在的注释结果，目前需要考虑的就是这两种）</em>这类信息，也要在这里展示。这个部分只在患者集合为某一项研究当中的所有参与数据注释的患者时展示出来。这些信息展示为列表（每次可以选择一个指标进行展示），并且可以进行一定的可视化操作（例如HR及其95%CI的可视化），目的在于帮助用户发现自己可能最希望关注的蛋白质，并且通过提供卡值等方法为患者的分类提供某种标准。利用这种标准，可以直接转到“Comparative View”界面进行进一步分析，也可以选择一组蛋白质保存到集合当中，以在其他模块（例如生成热图的“Expression spectrum”模块）当中进行进一步分析。</li>
+</ul>
+<h3 id="comparative-view">Comparative View</h3>
+<p>比较两个或多个患者集合，比较患者在多个指标方面的区别。仍然分为三个部分，分别用于比较连续属性、分类属性以及注释数据。这个部分主要用于探讨不同分型标准的效果，也可以用于探讨不同研究项目当中所用到的队列的差异所在。</p>
+<ul>
+<li><strong>连续数据统计与展示</strong>：首先要展示生存分析结果。其余的连续属性值在不同患者集合之间的比较，可以用Wilcoxon秩和检验进行。每次可选择一个指标进行可视化，可视化使用<strong>箱线图叠加散点图</strong>实现。<em>（这个部分以及下一部分主要参考cBioPortal）</em></li>
+<li><strong>类别数据统计与展示</strong>：分类属性值在不同患者集合之间的比较，可以用Fisher精确检验或卡方检验进行。每次可选择一个指标进行可视化，可视化使用<strong>堆积柱状图</strong>实现。</li>
+<li><strong>注释数据展示</strong>：只有在分析涉及到的所有患者集合都为某一项研究当中的所有参与数据注释的患者时出现。注释信息展示为列表（每次可以选择一个指标进行比较与展示）。连续指标，例如HR等，可以比较大小；分类指标，例如“某个基因在某项研究当中是某个亚型的Signature”，可以用Sankey diagram展示其在不同患者集合当中的相同与不同之处。相关的蛋白质要能够被选中（Sankey diagram）当中的每个区域都可以被选中，并且可以作为基因集合保存，并在后续数据分析过程当中使用。</li>
+</ul>
+<p><strong>这个部分的所有分析结果（蛋白质集合、患者集合及其分类标准）都要能够在不同分析模块之间自由传递，同时要允许用户自定义分类标准。</strong>此外，在这部分选择某个分类标准后，可以将这个分类标准传递到蛋白质与分子数据分析模块当中，此时这个分类标准是“携带”着相关患者被传递过去的。具体见下一部分。</p>
+<h2 id="_3">蛋白质与分子数据</h2>
+<p>整体上看，这个部分是利用已经完成了分类的患者集合，在分子层面上进行一系列的后续分析，以寻找这种或者有效、或者效果不好的分类标准背后的分子机理。</p>
+<ul>
+<li><strong>Proteins Overview</strong>：对于选中的一个或者多个蛋白质的概览。我暂时没有想到这个页面里应当展示什么。但在此展示选择的蛋白质等分子所在的通路，是一个不错的选择；</li>
+<li><strong>Expression spectrum</strong>：一个用于生成热图以展示表达谱的功能模块。用户在启动该模块之后，要通过选择一个患者集合与一个蛋白质/proteoform集合来初始化热图。热图将根据所选择的患者集合来分配数据集，用户可对于数据集进行调整，例如，数据集当中是否要包含癌旁组织相关数据等等。在初始化以后，用户可以从“Express Overview”界面当中引入分类标准，以丰富热图的注释信息。同时，用户可以选择在热图的特定位置添加一些其他的可视化图表，例如在热图的右侧展示HR及其95%CI等等；</li>
+<li><strong>Pathway Enrichment</strong>：用于进行通路富集分析的功能模块。利用一组蛋白质（及其与相应基因的对应关系信息），可以进行GSEA、ssGSEA等富集分析，也可以进行一般意义上的功能富集分析。前者还需要用户提供患者集合及其分类方法，后者则不需要提供这些额外的信息。</li>
+<li><strong>Differential Expression</strong>：差异表达分析功能模块，需要用户提供患者集合及其分类方法以及一个基因集合。由于在数据注释过程当中已经完成了所有可能的Pairwise差异表达分析，因此这里的差异表达分析不再要求“Pairwise”。差异表达分析要展示火山图。</li>
+<li><strong>Drug Target Mapping</strong>：输入一个或几个蛋白质，输出相应的与这些蛋白质互作的药物。用户可以选择不同的互作类型、不同的药物验证状态等等。</li>
+</ul>
+<p>以上为PDPM portal当前要涉及的的分析功能，这些功能已经涵盖了蛋白质组学临床研究需要涉及到的几乎全部数据分析方法。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../customSel/" class="btn btn-neutral float-left" title="Custom Selection"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Submission/" class="btn btn-neutral float-right" title="Login And Data Submit">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../customSel/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Submission/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

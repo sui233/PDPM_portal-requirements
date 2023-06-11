@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sui233.github.io/PDPM_portal-requirements/structure/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Structure - PDPM Portal Requirements</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Structure";
+        var mkdocs_page_input_path = "structure.md";
+        var mkdocs_page_url = "/PDPM_portal-requirements/structure/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PDPM Portal Requirements
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Main</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Structure</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">整体架构设计</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">数据库结构设计</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">用户界面与操作逻辑设计</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../opLog/">Opreation Logic</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../HomePage/">Home Page</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../customSel/">Custom Selection</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analyze/">Analysis</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Submission/">Login And Data Submit</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../entities/">Entity Information</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PDPM Portal Requirements</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Structure</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="pdpm-portal">PDPM portal各个层次的结构</h1>
+<p>PDPM portal的设计，首先要从整体结构框架开始，然后针对这个框架的各个部分逐渐细化，实现自顶向下的设计思路。</p>
+<h2 id="_1">整体架构设计</h2>
+<p>PDPM portal整体架构参考BioMart，分为客户端层、应用层与数据层。其中：</p>
+<ul>
+<li>客户端层与用户直接交互，通过可视化界面提供数据查询、浏览与数据分析等服务，通常还会允许用户选取一定的集合储存在服务器上，进行进一步的分析；</li>
+<li>应用层接受来自客户端的查询请求或者来自部署者的配置指令，决定数据的查询方式，即从metadata当中直接查询还是从数据库当中查询（一般的查询需求，查询metadata即可满足）；</li>
+<li>数据层则是作为信息与文件索引的数据库，存储了各个实体、关系的基本信息。如果应用层允许用户选取一定的集合并存储，这些集合也将存储在这个层次上。</li>
+</ul>
+<p>受BioMart架构的启发，本人提出如下图所示的整体架构：</p>
+<body>
+<div style="text-align:center">
+<img src="img/overall_archi.png" width="80%">
+</div>
+</body>
+
+<p>其中，信息库对应I部工作总览图当中的“I部信息库”只存储各个实体、关系及其属性，并以恰当的方式索引数据文件；“数据中心”对应I部其他部分，存储原始数据文件以及大部分分析结果文件。容易看出，这个架构与BioMart架构基本一致，但有以下几点区别：</p>
+<ul>
+<li><strong>信息库采用图数据库而非关系数据库</strong>。图数据库的结构决定了其不适合拆分并存储在不同位置的服务器上，应采用中心化存储方案，或向合作方的子服务器提供该数据库的拷贝；</li>
+<li><strong>在原有的三个层次以外，新增一个“插件社区”部分。</strong>这里的“插件”代表用户自定义的分析工具。“插件”由用户上传，在经过审核后发布，供更多用户使用，同时插件社区的各类信息将传递到信息库，用于分析用户的分析需求。这个部分是实现用户个性化分析的重要设施；</li>
+<li><strong>外部注释本地化。</strong>各类公共注释信息的数据规模不大，但有时通过网络访问这些资源时间成本较大，并且其中一些注释信息会随着版本的更新而发生变化。因此有必要将这些注释数据本地化，将外部注释信息整合到本身的数据注释当中，并将各项研究与其引用的外部注释具体版本一一对应。</li>
+</ul>
+<p>在以上数据架构的三个数据层次当中，我们并不关注应用层（即API所在的层次）的结构，主要关注数据库的结构与用户界面（UI）的结构。</p>
+<h2 id="_2">数据库结构设计</h2>
+<p>PDPM portal的数据库成为信息库，在图数据库的基础上实现。其E-R图如下所示：</p>
+<body>
+<div style="text-align:center">
+<img src="img/ERgraph.png" width="60%">
+</div>
+</body>
+
+<p>其中包含研究项目（Project）、患者（Patient）、样本（Sample）、蛋白质（Protein）、Proteoform、器官（Organ）与药物（Drug）。实体之间存在的关系如上图所示。详细内容见数据注释表头设计文档。</p>
+<p>数据库结构的基本设计原则为：实体的属性应当是<strong>不以某一次实验的结果而转移的性质</strong>，而关系的属性则要体现出<strong>某一次实验的结果</strong>当中最为重要的性质（即一般的数据分析工作最为关心的性质）。</p>
+<h2 id="_3">用户界面与操作逻辑设计</h2>
+<p>用户界面要融合cBioPortal与ICGC、GDC Data portal的结构，在原则上参考后者，在细节上参考前者。整体思路为：在一种类似Data Commons的架构上建立一套数据选取与分析界面，利用这套界面引导用户完成数据选取与分析工作，即引导用户利用其获取的数据或分析的中间结果，进行下一步分析。用户可以，但不必管理各种集合，这个过程由网站代劳，这一点与ExpressVis类似。UI的结构如下图所示：</p>
+<body>
+<div style="text-align:center">
+<img src="img/ui_arch.png" width="60%">
+</div>
+</body>
+
+<p>当前阶段不必考虑考虑所谓“分析工具社区”，主要考虑绿色虚线方框当中的内容即可。</p>
+<p>在接下来的几个页面当中，将主要讨论用户界面以及操作逻辑的设计问题。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Main"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../opLog/" class="btn btn-neutral float-right" title="Opreation Logic">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../opLog/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
