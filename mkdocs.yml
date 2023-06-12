@@ -1,0 +1,14 @@
+site_name: PDPM Portal Requirements
+site_url: https://sui233.github.io/PDPM_portal-requirements/
+nav:
+    - Main: index.md
+    - Structure: structure.md
+    - Opreation Logic: opLog.md
+    - Home Page: HomePage.md
+    - Custom Selection: customSel.md
+    - Analysis: analyze.md
+    - Login And Data Submit: Submission.md
+    - Entity Information: entities.md
+    - About: about.md
+
+theme: readthedocs
